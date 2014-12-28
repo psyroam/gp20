@@ -38,12 +38,15 @@
 				//$URL = "sites/essentials/enabling_set.php";
 			}
 		}
-		
+
 		if(isset($_POST['btnEnabling']))
 		{
 			$_SESSION['user']->enable($_POST['txtSetEnabling']);
 		}
-		
+	*/
+
+	#region Register
+
 		if(isset($_POST['txtRegister_Benutzername'])&&isset($_POST['txtRegister_Password'])&&isset($_POST['txtRegister_Password_Confirmation']))
 		{
 			if($_POST['txtRegister_Password'] === $_POST['txtRegister_Password_Confirmation'])
@@ -51,8 +54,8 @@
 				USER::register($_POST['txtRegister_Benutzername'],$_POST['txtRegister_Password']);
 			}
 		}
+		
 	#endregion
-	*/
 
 		#regin login
 				
