@@ -21,6 +21,7 @@
 		$URL = "php/login/login.php";
 	}
 
+	/*
 	#region Register
 		if(isset($_GET['enabling']))
 		{
@@ -51,25 +52,26 @@
 			}
 		}
 	#endregion
+	*/
 
-	
 		#regin login
 				
 			if(isset($_GET['id']))
 			{
 				$URL = $_SESSION['db']->getLinkById($_GET['id']);
 			}
-			else if(!isset($_GET['id']))
+			else if(!isset($_GET))
 			{
 				$URL = $_SESSION['db']->getLinkById(10);//default load
 			}
 			//ansonsten home.php
-			else if(!isset($_GET['id']) &&isset($_SESSION['user'])&& $_SESSION['user']->isLogged === true)
+			else if(!isset($_GET['id']) && isset($_SESSION['user']) && $_SESSION['user']->isLogged === true)
 			{
-				//$URL = "./fahrerfeld.php";
+				$URL = $_SESSION['db']->getLinkById(18);//home.php
 			}
 
 		#endregion
+
 	if($_SESSION['user']->isEnabled)
 	{
 		#region Add new link
@@ -117,20 +119,15 @@
 		#endregion
 	}
 
-
 	#region news
 		if(isset($_GET['news_site']))
 		{
 			$URL = $_SESSION['db']->getLinkById(10);
 		}
-
-		if(isset($_GET['artikel']))
+		else if(isset($_GET['artikel']))
 		{
 			$URL = $_SESSION['db']->getLinkById(17);
-			//$URL = $_SESSION['db']->getLinkById(17);
 		}
-
-
 	#endregion
 
 	function isURL_ID_valid($id)
