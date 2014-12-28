@@ -1,7 +1,6 @@
 ﻿<?php
 	//error_reporting(0);
 	require_once './php/cms/cms.php';
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,12 +22,9 @@
     obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
   }
 </script>
-
 	</head>
-        
 	<body>
 		<div id="page">
-		
 			<div id="header">
 			<div id="headercontainer">
 					<div id="logo" title="GP20 Karting Series" onclick="location.href='index.html';">
@@ -37,18 +33,18 @@
 						<div id="navMenu">
 						<div id="navMenuContainer">
 						<div id="navMenuMain">
-							<a href="news.php">News</a>
-							<a href="fahrerfeld.php">Fahrerfeld</a>
-							<a href="rennen.html">Rennkalender</a>
-							<a href="ergebnisse.html">Ergebnisse</a>
-							<a href="galerie.html">Galerie</a>                                             
-       <a href="mehr">Mehr</a>                                                 
+							<a href="<?=$_SESSION['db']->getLinkById(10)?>"><?=$_SESSION['db']->get_title_by_id(10)?></a>
+							<a href="<?=$_SESSION['db']->getLinkById(5)?>"><?=$_SESSION['db']->get_title_by_id(5)?></a>
+							<a href="<?=$_SESSION['db']->getLinkById(12)?>"><?=$_SESSION['db']->get_title_by_id(12)?></a>
+							<a href="<?=$_SESSION['db']->getLinkById(2)?>"><?=$_SESSION['db']->get_title_by_id(2)?></a>
+							<a href="<?=$_SESSION['db']->getLinkById(6)?>"><?=$_SESSION['db']->get_title_by_id(6)?></a>                                            
+       						<a href="mehr">Mehr</a>                                                 
 					
-						</div>
-						<div id="navMenuRight">
-<form><input class="suchleiste" name="Suche" placeholder="Suche" type="text" />
-<input type="image" src="images/icons/icon_search.png" alt="Suche" class="submit" />
-</form>
+							</div>
+							<div id="navMenuRight">
+								<form><input class="suchleiste" name="Suche" placeholder="Suche" type="text" />
+								<input type="image" src="images/icons/icon_search.png" alt="Suche" class="submit" />
+						</form>
       </div>
 						</div>
 						</div>

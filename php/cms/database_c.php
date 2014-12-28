@@ -59,7 +59,7 @@
 		}*/
 
 		public function getLinkById($id){
-			$query = "SELECT * FROM `".$this->creds['table']['sites']."` WHERE `id`='".mysql_escape_string($id)."';";
+			$query = "SELECT `url` FROM `".$this->creds['table']['sites']."` WHERE `id`='".mysql_escape_string($id)."';";
 			$result =  mysql_query($query)or die(mysql_error());
 			$link="";
 			
@@ -116,8 +116,10 @@
 			mysql_close($this->connection);
 		}
 
+		//not up to date
 		public function update_values($id,$text,$url)
 		{
+			print("not up to date");
 			$tb = $this->creds['table']['sites'];
 			$query = "SELECT * FROM $tb WHERE `id`='".mysql_escape_string($id)."';";
 			print($query);
@@ -128,7 +130,7 @@
 
 			Report::publish(new Report("Erfolgreich geändert!","",Error_LVL::Positive));
 		}
-
+	
 		public function delete_values($id,$text,$url)
 		{
 			$table = $this->creds['table']['sites'];
@@ -262,6 +264,14 @@
 			{
 				return false;
 			}
+		}
+
+		public function get_title_by_id($id)
+		{
+			$query = "SELECT `title` FROM `".$this->creds['table']['sites']."` WHERE `id` = '".mysql_escape_string($id)."';";
+			$result = mysql_query($query)or die(mysql_error());
+
+			return mysql_result($result, 0);
 		}
 
 		public function get_title_by_url($url)
