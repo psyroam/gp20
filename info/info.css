@@ -1,0 +1,86 @@
+body{
+	background-image: none;
+	background-color: inherit;
+}
+
+#main_container{
+	width:100%;
+	height:130px;
+	margin:0px;
+	padding:0px;
+}
+
+#logo {
+		width: 300px;
+		height: 130px;
+		background-image:url(./../images/logo.png);
+		float: left;
+		cursor: pointer;
+		margin-top: 0px;
+}
+
+#countdowninfo {
+	width: 190px;
+	height: 130px;
+	background-color: #EDEDED;
+	float:left;
+	background: rgb(0, 0, 51);
+	background: rgba(0, 0, 51, 0.6);
+	margin-top:20px;
+}
+
+#countdown_dashboard {
+	position: absolute;
+	left:510px; /* logo.width + countdowninfo.width + margin.left*/
+	height:130px;
+	width: 100%;
+	margin-left: 0px;
+	padding-left:0px;
+	background: rgb(0,0,51);
+	background: rgba(0, 0, 51, 0.6);
+	color:white;
+	margin-top:20px;
+}
+
+#time_container {
+					
+					overflow: hidden;
+					margin: 20px auto;
+					margin-left:12.5px;
+}
+				
+
+					.dash {
+						width: 90px;
+						height: 85px;
+						background: transparent url(./../images/timer/dash_light.png) 0 0 no-repeat;
+						float: left;
+						margin-left: 10px;
+						margin-right: 10px;
+						position: relative;
+					}
+
+				.dash .digit {
+					font-size: 34px;
+					color: #f5f5f5;
+					font-weight: normal;
+					float: left;
+					width: 45px;
+					text-align: center;
+					font-family: 'bebas_neueregular', Helvetica, sans-serif;
+					position: relative;
+					padding-top: 15px;
+				}
+
+				.dash_title {
+					position: absolute;
+					display: block;
+					bottom: 0px;
+					font-size: 16px;
+					color: #f5f5f5;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					width: 90px;
+					text-align: center;
+					font-family: 'bebas_neueregular', Helvetica, sans-serif;
+				}

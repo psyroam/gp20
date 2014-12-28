@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>GP20 - Karting Series | The Official Website</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/ico"/> 
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+	$(function slide(){
+		$('.fadein img:gt(0)').hide();
+		setInterval(function slide(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 6000);
+	});
+	</script>		
+	<script language="javascript" type="text/javascript">
+	jQuery(document).ready(function() {
+		$(".box").css({'height':($(".content").height()+'px')});
+
+		$(".box").height($(".content").height());
+
+		var highestCol = Math.max($('.box').height(),$('.content').height());
+		$('.sidebar').height(highestCol);
+	</script>
+	
+		
+	</head>
+	<body>
+	
+		<div id="page">
+		<div id="wrapper">
+		<div id="socialmedia">
+				<ul>
+					<li><a href="http://www.facebook.com/gp20AUT/" target="_blank"><img id="fblink"/></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="position:relative;left:-22px;"><a href="kontakt.html"><h5>Kontakt</h5></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="left:-35px;"><a href="impressum.html"><h5>Impressum</h5></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="left:-20px;">
+						<a href="./php/login/login.php"><h5>Login</h5></a>
+					</li>
+				</ul>
+					
+		</div>
+			<div id="header" title="GP20 Karting Series" onclick="location.href='index.html';">
+			</div>
+						<div id="navMenu">
+				<ul>
+					<li><a href="fahrerfeld.php"><h4>Fahrerfeld</h4></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="background-color: #F1F1F1"><a href="ergebnisse.html"><h4>Ergebnisse</h4></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="multimedia.html"><h4>Multimedia</h4></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="about.html"><h4>Über Uns</h4></a>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="foto">
+			<div class="fadein">
+				<img src="images/foto01.jpg" title="Testlauf im Dezember 2013">
+			</div>
+			
+			<div id="pagetitle"><h3 style="font-size: 80px; text-align: right; padding-top: 10px; padding-bottom: 10px;">Ergebnisse</h3>
+			</div>
+			</div>
+			
+			<iframe id="box" src="php/score_table.php">
+			
+			</iframe>
+			
+			
+			<div id="ergebnisauswahl">
+				<ul>
+					<li style="background-color: #E6E6E6"><a href="ergebnisse.html"><h2>Letztes Rennen</h2></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="ergebnisse.html"><h2>Saison 2014</h2></a>
+						<ul>
+						<li><a href="ergebnisse1.html" style="padding-left: 15px; width: 230px; font-size: 10px">Rennen 1: Kottingbrunn</a></li>
+						<li><a href="ergebnisse2.html" style="padding-left: 15px; width: 230px; font-size: 10px">Rennen 2: Wien</a></li>
+						<li><a href="ergebnisse.html" style="padding-left: 15px; width: 230px; font-size: 10px">Rennen 3: Langenzersdorf</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="content" style="height: 815px">
+			
+			<div class="normheadline"><h3>Saison 2014: Rennen 2 - Wien (20.06.2014)</h3></div>
+			<h1 style="margin-bottom: 10px; margin-top: 70px;">Rennen</h1>
+			<table id="tablenorm">
+			<tr>
+					<th>Platz</th>
+					<th>Fahrer</th>
+					<th>Team</th>
+					<th>Differenz</th>
+					<th>Beste Runde</th>
+					<th>Runden</th>
+				</tr>
+				<tr>
+					<td>1.</td>
+					<td>Alexander SCHUSTER</td>
+					<td>Black Arrow Racing</td>
+					<td>/</td>
+					<td>36.972</td>
+					<td>28</td>
+				</tr>
+				<tr>
+					<td>2.</td>
+					<td>Julian BREITNER</td>
+					<td>Speedbros</td>
+					<td>+32.189</td>
+					<td>37.851</td>
+					<td>28</td>
+				</tr>
+				<tr>
+					<td>3.</td>
+					<td>Kevin PER</td>
+					<td>Mirage Team</td>
+					<td>+1 Runde</td>
+					<td>38.551</td>
+					<td>27</td>
+				</tr>
+				<tr>
+					<td>4.</td>
+					<td>Alexander RUF</td>
+					<td>Molten Tyre</td>
+					<td>+2 Runden</td>
+					<td>38.921</td>
+					<td>26</td>
+				</tr>
+				<tr>
+					<td>5.</td>
+					<td>Paul ZELLHOFER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+4 Runden</td>
+					<td>41.005</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>6.</td>
+					<td>Philipp PASSECKER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+27 Runden</td>
+					<td>46.965</td>
+					<td>1</td>
+				</tr>
+				
+			</table>
+			<h1 style="margin-bottom: 10px; margin-top: 70px;">Qualifying</h1>
+			<table id="tablenorm">
+			<tr>
+					<th>Platz</th>
+					<th>Fahrer</th>
+					<th>Team</th>
+					<th>Differenz</th>
+					<th>Beste Runde</th>
+					<th>Runden</th>
+				</tr>
+				<tr>
+					<td>1.</td>
+					<td>Alexander SCHUSTER</td>
+					<td>Black Arrow Racing</td>
+					<td>/</td>
+					<td>37.520</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>2.</td>
+					<td>Kevin PER</td>
+					<td>Mirage Team</td>
+					<td>+1.380</td>
+					<td>38.900</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>3.</td>
+					<td>Julian BREITNER</td>
+					<td>Speedbros</td>
+					<td>+1.497</td>
+					<td>39.017</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>4.</td>
+					<td>Alexander RUF</td>
+					<td>Molten Tyre</td>
+					<td>+1.545</td>
+					<td>39.065</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>5.</td>
+					<td>Philipp PASSECKER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+2.175</td>
+					<td>39.695</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>6.</td>
+					<td>Paul ZELLHOFER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+3.876</td>
+					<td>41.396</td>
+					<td>9</td>
+				</tr>
+			</table>
+		
+			</div>
+			
+			<div id="footer">
+			<p style="padding-left: 35px"><b>Quicklinks:</b> <a href="fahrerfeld.php">Fahrerfeld</a> | <a href="ergebnisse.html">Ergebnisse</a> | <a href="multimedia.html">Multimedia</a> | <a href="about.html">Über uns</a> | <a href="impressum.html">Impressum</a> | <a href="kontakt.html">Kontakt</a> | <a href="reglement.html">Reglement</a> | <a href="login.php">Login</a> | <a href="sitemap.html">Sitemap</a><a href="http://www.facebook.com/gp20AUT/" target="_blank"><img id="fblink"/></a></p>
+			<p style="text-align: center; font-size: 12px;">&copy GP20 Karting Series 2014 - Alle Rechte vorbehalten</p>
+			</div>
+			</div>
+			</div>
+	</body>
+</html>

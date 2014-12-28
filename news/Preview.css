@@ -1,0 +1,107 @@
+*	{
+		color: black; text-align: justify; font-family: Century Gothic, sans-serif; font-size: 14px;
+	}
+strong {
+		color: black; text-align: justify; font-family: Century Gothic, sans-serif; font-size: 18px; padding-left: 15px; padding-right: 15px; text-align: justify;
+	}	
+h3 	{
+		color: white; text-align: left; font-size: 32px; font-family: 'bebas_neueregular', sans-serif; margin-top: 3px; font-weight: normal; padding-left: 20px; padding-right: 20px; text-align: justify; margin-bottom: 5px;
+	}
+h4	{
+		color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 22px; padding-left: 15px; margin: 0; padding-top: 2px; font-weight: normal;
+	} 
+h5	{
+		color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 17px; padding-left: 7px; margin: 0; padding-top: 2px; font-weight: normal;
+	} 
+h6	{
+		margin-left: 270px; color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 32px; padding-left: 10px; padding-right: 30px; font-weight: normal; margin-top: 10px; margin-bottom: 10px;
+	} 
+@font-face {
+				font-family: 'bebas_neueregular';
+				src: url('./../BebasNeue-webfont.eot');
+				src: url('./,,/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+				url('./../BebasNeue-webfont.woff') format('woff'),
+				url('./../BebasNeue-webfont.ttf') format('truetype'),
+				url('./../BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+@font-face {
+				font-family: 'copystruct';
+				src: url('./../COPYN___-webfont.eot');
+				src: url('./../COPYN___-webfont.eot?#iefix') format('embedded-opentype'),
+				url('./../COPYN___-webfont.woff') format('woff'),
+				url('./../COPYN___-webfont.ttf') format('truetype'),
+				url('./../COPYN___-webfont.svg#copystruct') format('svg');
+				font-weight: normal;
+				font-style: normal;
+			}
+
+#image{
+ height: 115px;
+ width: 210px;
+	position: absolute;
+	float: left;
+	margin-left: 20px;
+	padding: 0px;
+ overflow: visible;
+}
+	#image img{
+		height: 130px;
+		width: 210px;
+		margin: 0px;
+		padding: 0px;
+  background-color: #f5f5f5;
+  overflow: visible;
+	}
+
+#container{
+ height: 130px;
+ width: 100%;
+ margin-top: 0px;
+ margin-bottom: 0px;
+ padding: 0px;
+ background-color: #f5f5f5;
+}
+
+#content{
+ height: 100px;
+	margin-left: 260px;
+ margin-top: 0px;
+ margin-bottom: 0px;
+ padding: 0px;
+}
+
+#mehrlesen{
+	position: absolute;
+ margin-top: -10px;
+	height: 5px;
+	width: auto;
+	font-family: 'bebas_neueregular';
+ cursor: pointer;
+ margin-left: 373px;
+}
+
+	#mehrlesen a{
+		color: #000000;
+		text-decoration: none;
+	}
+        
+ #mehrlesen:hover a{
+  text-decoration: none;
+  color: blue;
+ }
+ 
+ hr {
+  margin-top: 40px;
+  width: 450px;
+  margin-left: 230px;
+  color: #888888;
+  background-color: #888888;
+ }
+
+ #content p{
+ 	margin-top: -10px; 
+ 	padding-top: 75px; 
+ 	padding-right: 20px;
+ }

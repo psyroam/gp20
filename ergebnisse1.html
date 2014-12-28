@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>GP20 - Karting Series | The Official Website</title>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/ico"/> 
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script>
+	$(function slide(){
+		$('.fadein img:gt(0)').hide();
+		setInterval(function slide(){$('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 6000);
+	});
+	</script>		
+	<script language="javascript" type="text/javascript">
+	jQuery(document).ready(function() {
+		$(".box").css({'height':($(".content").height()+'px')});
+
+		$(".box").height($(".content").height());
+
+		var highestCol = Math.max($('.box').height(),$('.content').height());
+		$('.sidebar').height(highestCol);
+	</script>
+	
+		
+	</head>
+	<body>
+	
+		<div id="page">
+		<div id="wrapper">
+		<div id="socialmedia">
+				<ul>
+					<li><a href="http://www.facebook.com/gp20AUT/" target="_blank"><img id="fblink"/></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="position:relative;left:-22px;"><a href="kontakt.html"><h5>Kontakt</h5></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="left:-35px;"><a href="impressum.html"><h5>Impressum</h5></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="left:-20px;">
+						<a href="./php/login/login.php"><h5>Login</h5></a>
+					</li>
+				</ul>
+					
+		</div>
+			<div id="header" title="GP20 Karting Series" onclick="location.href='index.html';">
+			</div>
+						<div id="navMenu">
+				<ul>
+					<li><a href="fahrerfeld.php"><h4>Fahrerfeld</h4></a>
+					</li>
+				</ul>
+				<ul>
+					<li style="background-color: #F1F1F1"><a href="ergebnisse.html"><h4>Ergebnisse</h4></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="multimedia.html"><h4>Multimedia</h4></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="about.html"><h4>Über Uns</h4></a>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="foto">
+			<div class="fadein">
+				<img src="images/foto01.jpg" title="Testlauf im Dezember 2013">
+			</div>
+			
+			<div id="pagetitle"><h3 style="font-size: 80px; text-align: right; padding-top: 10px; padding-bottom: 10px;">Ergebnisse</h3>
+			</div>
+			</div>
+			
+			<iframe id="box" src="php/score_table.php">
+			
+			</iframe>
+			
+			
+			<div id="ergebnisauswahl">
+				<ul>
+					<li style="background-color: #E6E6E6"><a href="ergebnisse.html"><h2>Letztes Rennen</h2></a>
+					</li>
+				</ul>
+				<ul>
+					<li><a href="ergebnisse.html"><h2>Saison 2014</h2></a>
+						<ul>
+						<li><a href="ergebnisse1.html" style="padding-left: 15px; width: 230px; font-size: 10px">Rennen 1: Kottingbrunn</a></li>
+						<li><a href="ergebnisse2.html" style="padding-left: 15px; width: 230px; font-size: 10px">Rennen 2: Wien</a></li>
+						<li><a href="ergebnisse.html" style="padding-left: 15px; width: 230px; font-size: 10px">Rennen 3: Langenzersdorf</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="content" style="height: 815px">
+			
+			<div class="normheadline"><h3>Saison 2014: Rennen 1 - Kottingbrunn (23.03.2014)</h3></div>
+			<h1 style="margin-bottom: 10px; margin-top: 70px;">Rennen</h1>
+			<table id="tablenorm">
+			<tr>
+					<th>Platz</th>
+					<th>Fahrer</th>
+					<th>Team</th>
+					<th>Differenz</th>
+					<th>Beste Runde</th>
+					<th>Runden</th>
+				</tr>
+				<tr>
+					<td>1.</td>
+					<td>Florian SCHELLNAST</td>
+					<td>Speedbros</td>
+					<td>/</td>
+					<td>44.776</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>2.</td>
+					<td>Alexander SCHUSTER</td>
+					<td>Black Arrow Racing</td>
+					<td>+1.818</td>
+					<td>45.381</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>3.</td>
+					<td>Rafael WAWRZYNIAK</td>
+					<td>Mirage Team</td>
+					<td>+3.899</td>
+					<td>45.033</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>4.</td>
+					<td>Julian BREITNER</td>
+					<td>Speedbros</td>
+					<td>+23.429</td>
+					<td>46.143</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>5.</td>
+					<td>Heinrich HALAMA</td>
+					<td>Black Arrow Racing</td>
+					<td>+42.015</td>
+					<td>46.189</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>6.</td>
+					<td>Kevin PER</td>
+					<td>Mirage Team</td>
+					<td>+1 Runde</td>
+					<td>47.196</td>
+					<td>23</td>
+				</tr>
+				<tr>
+					<td>7.</td>
+					<td>Alexander RUF</td>
+					<td>Molten Tyre</td>
+					<td>+2 Runden</td>
+					<td>49.326</td>
+					<td>22</td>
+				</tr>
+				<tr>
+					<td>8.</td>
+					<td>Philipp PASSECKER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+3 Runden</td>
+					<td>49.616</td>
+					<td>21</td>
+				</tr>
+				<tr>
+					<td>9.</td>
+					<td>Lukas STAINDL</td>
+					<td>Molten Tyre</td>
+					<td>+4 Runden</td>
+					<td>55.739</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>10.</td>
+					<td>Paul ZELLHOFER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+5 Runden</td>
+					<td>53.281</td>
+					<td>19</td>
+				</tr>
+			</table>
+			<h1 style="margin-bottom: 10px; margin-top: 70px;">Qualifying</h1>
+			<table id="tablenorm">
+			<tr>
+					<th>Platz</th>
+					<th>Fahrer</th>
+					<th>Team</th>
+					<th>Differenz</th>
+					<th>Beste Runde</th>
+					<th>Runden</th>
+				</tr>
+				<tr>
+					<td>1.</td>
+					<td>Alexander SCHUSTER</td>
+					<td>Black Arrow Racing</td>
+					<td>/</td>
+					<td>46.142</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>2.</td>
+					<td>Florian SCHELLNAST</td>
+					<td>Speedbros</td>
+					<td>+0.618</td>
+					<td>46.760</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>3.</td>
+					<td>Rafael WAWRZYNIAK</td>
+					<td>Mirage Team</td>
+					<td>+0.739</td>
+					<td>46.881</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>4.</td>
+					<td>Julian BREITNER</td>
+					<td>Speedbros</td>
+					<td>+0.892</td>
+					<td>47.034</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>5.</td>
+					<td>Heinrich HALAMA</td>
+					<td>Black Arrow Racing</td>
+					<td>+1.342</td>
+					<td>47.484</td>
+					<td>11</td>
+				</tr>
+				<tr>
+					<td>6.</td>
+					<td>Kevin PER</td>
+					<td>Mirage Team</td>
+					<td>+3.829</td>
+					<td>49.971</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>7.</td>
+					<td>Alexander RUF</td>
+					<td>Molten Tyre</td>
+					<td>+4.372</td>
+					<td>50.514</td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>8.</td>
+					<td>Philipp PASSECKER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+5.571</td>
+					<td>51.713</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>9.</td>
+					<td>Paul ZELLHOFER</td>
+					<td>Ultimatives Noobteam</td>
+					<td>+10.485</td>
+					<td>56.627</td>
+					<td>7</td>
+				</tr>
+				<tr>
+					<td>10.</td>
+					<td>Lukas STAINDL</td>
+					<td>Molten Tyre</td>
+					<td>+15.362</td>
+					<td>1:01.504</td>
+					<td>8</td>
+				</tr>
+			</table>
+			</div>
+			
+			<div id="footer">
+			<p style="padding-left: 35px"><b>Quicklinks:</b> <a href="fahrerfeld.php">Fahrerfeld</a> | <a href="ergebnisse.html">Ergebnisse</a> | <a href="multimedia.html">Multimedia</a> | <a href="about.html">Über uns</a> | <a href="impressum.html">Impressum</a> | <a href="kontakt.html">Kontakt</a> | <a href="reglement.html">Reglement</a> | <a href="login.php">Login</a> | <a href="sitemap.html">Sitemap</a><a href="http://www.facebook.com/gp20AUT/" target="_blank"><img id="fblink"/></a></p>
+			<p style="text-align: center; font-size: 12px;">&copy GP20 Karting Series 2014 - Alle Rechte vorbehalten</p>
+			</div>
+			</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,619 @@
++		h1	{
+			color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 42px; padding-left: 20px; padding-right: 35px; font-weight: normal; margin-top: 10px; margin-bottom: 10px;
+			} 
+		h2	{
+			color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 24px; padding-left: 20px; margin-top: 20px; margin-bottom: 10px; font-weight: normal;
+			} 
+		h3 	{
+			color: white; text-align: left; font-size: 32px; font-family: 'bebas_neueregular', sans-serif; margin-top: 3px; font-weight: normal; padding-left: 20px; padding-right: 20px; text-align: left; margin-bottom: 5px;
+			}
+		h4	{
+			color: white;  font-family: 'bebas_neueregular', sans-serif; font-size: 24px; padding-left: 20px; padding-right: 20px; padding-top: 10px; font-weight: normal; margin: 0px;
+			} 
+		h6	{
+			color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 24px; 
+			} 
+		p	{
+			color: black; text-align: justify; font-family: Century Gothic, sans-serif; font-size: 14px; margin-left: 20px; margin-right: 20px; margin-top: 0px;
+			}
+			
+		.date {
+			color: black; text-align: left; font-size: 10px; font-family: Century Gothic, sans-serif; font-style: italic; padding-top: 10px;
+			}
+		.smallp {
+			color: black; text-align: left; font-size: 12px; padding-left: 15px; padding-right: 15px; font-family: Century Gothic; font-weight: bold; padding-top: 15px;
+			}
+		.whitep {
+			color: white; font-family: Century Gothic; text-align: left; font-size: 14px; margin-left: 20px; margin-right: 20px; margin-bottom: 10px; margin-top: 10px;
+			}
+			
+			
+					@font-face {
+						font-family: 'bebas_neueregular';
+						src: url('BebasNeue-webfont.eot');
+						src: url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+						url('BebasNeue-webfont.woff') format('woff'),
+						url('BebasNeue-webfont.ttf') format('truetype'),
+						url('BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+						font-weight: normal;
+						font-style: normal;
+					}
+					
+					@font-face {
+						font-family: 'copystruct';
+						src: url('COPYN___-webfont.eot');
+						src: url('COPYN___-webfont.eot?#iefix') format('embedded-opentype'),
+						url('COPYN___-webfont.woff') format('woff'),
+						url('COPYN___-webfont.ttf') format('truetype'),
+						url('COPYN___-webfont.svg#copystruct') format('svg');
+						font-weight: normal;
+						font-style: normal;
+					}
+
+					a:link {text-decoration:none; color:#000000;}
+					a:visited {text-decoration:none; color:#000000;}
+					a:hover {text-decoration:none; color:#cc0033;}
+					a:active {text-decoration:none; color:#cc0033;}
+						
+body {		
+	/*background-color: #d5d5d5*/;
+	background-image: url(images/bg.jpg);
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	margin: 0px;
+}
+			
+#page {
+	background-color: // #f5f5f5;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+#wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	padding: 20px;
+	width: 1080px;
+	height: auto;
+	overflow: visible;
+	background: rgb(255,255,255);
+	background: rgba(255, 255, 255, 0.6);
+}
+
+#header {
+	width: 100%;
+	height: 200px;
+	background-image: url(./images/header.jpg);
+	margin-bottom: 10px;
+	margin-top: 0px;
+	padding-top: 30px;
+}
+
+#headercontainer {
+	width: 1080px;
+	height: 150px;
+	background-color: //#000066;
+	margin-bottom: 10px;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logo {
+	width: 300px;
+	height: 150px;
+	background-image:url(./images/logo.png);
+	float: left;
+	cursor: pointer;
+}
+
+#foto {
+	width: 100%;
+	height: 400px;
+	margin-bottom: 10px;
+	background-color: #000000;
+	position: relative;
+}
+
+.fadein { position: absolute; width:100%;}
+		.fadein img { position: absolute; left:0; top:0; }
+
+#footer {
+	width: 100%;
+	height: 120px;
+	background-color: #f5f5f5;
+	clear: both;
+	padding-top: 5px;
+}
+
+#navMenu {
+	background-color: #000033;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+#navMenuContainer {
+	background-color: //#000033;
+	width: 1080px;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}		
+
+#navMenuMain {
+	padding-top: 8px;
+	width: auto;
+	height: 40px;
+	margin-bottom: 10px;
+	background-color: //#000033;
+	float: left;
+}
+						
+					#navMenuMain a {
+						background: //#cccccc;
+						color: #f5f5f5; 
+						font-family: 'bebas_neueregular', sans-serif; 
+						font-size: 24px; 
+						padding-left: 15px;
+						padding-right: 15px;
+						margin: 0; 
+						padding-top: 2px; 
+						font-weight: normal;
+						text-decoration: none;
+						border-radius: 3px;
+						transition: background 0.2s linear 0s, color 0.2s linear 0s; -moz-transition: background 0.2s linear 0s, color 0.2s linear 0s; -webkit-transition: background 0.2s linear 0s, color 0.2s linear 0s;
+					}
+					
+					#navMenuMain a:hover {
+						background: #f5f5f5;
+						color: #000033;
+					}
+
+#navMenuRight {
+	padding-top: 8px;
+	width: auto;
+	height: 40px;
+	margin-bottom: 10px;
+	background-color: //#000033;
+	float: right;
+}
+						
+					#navMenuRight a {
+						background: //#cccccc;
+						color: #f5f5f5; 
+						font-family: 'bebas_neueregular', sans-serif; 
+						font-size: 24px; 
+						padding-left: 15px;
+						padding-right: 15px;
+						margin: 0; 
+						padding-top: 2px; 
+						font-weight: normal;
+						text-decoration: none;
+						border-radius: 3px;
+      transition: background 0.2s linear 0s, color 0.2s linear 0s; -moz-transition: background 0.2s linear 0s, color 0.2s linear 0s; -webkit-transition: background 0.2s linear 0s, color 0.2s linear 0s;
+					}
+					
+					#navMenuRight a:hover {
+						background: #f5f5f5;
+						color: #000033;
+					}
+
+     .suchleiste {
+      height: 20px;
+      position: relative;
+      right: 0;
+      bottom: 7px;
+     }
+
+#scoretable_einzelwertung {
+	width: 250px;
+	background-color: #f5f5f5;
+	float: right;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border: 0px;
+}
+
+#scoretable_teamwertung {
+	width: 250px;
+	background-color: #f5f5f5;
+	float: right;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border: 0px;
+}
+
+
+#letztesrennen {
+	width: 250px;
+	background-color: #f5f5f5;
+	float: right;
+	margin-bottom: 10px;
+	overflow: hidden;
+	border: 0px;
+}
+
+#sidebox {
+ width: 250px;
+ height: auto;
+ float: right;
+ background-color: #f5f5f5;
+}
+
+#content {
+	width: 1080px; /* ACHTUNG: Bei Änderungen beachten, dass die Content Width auch inline gesetzt wird*/
+	background-color: #f5f5f5;
+	float: left;
+	margin-bottom: 10px;
+	height: auto;
+	overflow: hidden;
+}
+
+#countbox1 {
+	font-size: 25px;
+	color: red;
+	text-align: center;
+}
+
+.normheadline {
+	width: 100%;
+	height: 40px;
+	background-color: #000025;
+	padding-top: 2px;
+	position: relative;
+}
+
+.infoto {
+	width: 500px;
+	height: auto;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	opacity: 0.99;
+	filter: alpha(opacity=99); /* For IE8 and earlier */
+	background-color: rgb(170, 170, 170);
+	background-color: rgba(170, 170, 170, 0.7);
+	position: absolute;
+	bottom: 70px;
+ overflow: display;
+}
+
+					.infoto h4 {
+						font-size: 34px;
+						font-weight: normal;
+						text-align: left;
+						padding-right: 130px;
+						padding-top: 7px;
+						padding-left: 20px;
+						margin-top: 0px;
+						margin-bottom: 0px;
+					}
+
+.mehrlesen {
+	width: auto;
+	height: auto;
+	position: absolute;
+	bottom: -37px;
+ left: 0;
+	background-color: //#cc0000;
+}					
+					                   
+					.mehrlesen a {
+						background: #cc0033;
+						color: #f5f5f5; 
+						font-family: 'bebas_neueregular', sans-serif;                                      
+						font-size: 20px;
+						padding-left: 20px;
+						padding-right: 20px;    
+						padding-top: 5px;
+						padding-bottom: 5px;                                                 
+						font-weight: normal;
+						text-decoration: none;
+						transition: background 0.2s linear 0s, color 0.2s linear 0s; -moz-transition: background 0.2s linear 0s, color 0.2s linear 0s; -webkit-transition: background 0.2s linear 0s, color 0.2s linear 0s;
+					}
+					
+					.mehrlesen a:hover {
+						background: #303030;
+						color: #f5f5f5;
+					}
+					
+.mehrlesenInverted {
+	width: auto;
+	height: 30px;
+	margin-bottom: 0px;
+	background-color: //#000033;
+}					
+					                   
+					.mehrlesenInverted a {
+						background: #f5f5f5;
+						color: #000033;
+						font-family: 'bebas_neueregular', sans-serif; 
+						font-size: 20px; 
+						padding-left: 15px;
+						padding-right: 15px;
+						padding-top: 2px; 
+						font-weight: normal;
+						text-decoration: none;
+						border-radius: 3px;
+						transition: background 0.2s linear 0s, color 0.2s linear 0s; -moz-transition: background 0.2s linear 0s, color 0.2s linear 0s; -webkit-transition: background 0.2s linear 0s, color 0.2s linear 0s;
+					}
+					
+					.mehrlesenInverted a:hover {
+						background: #000033;
+						color: #f5f5f5;
+					}
+					
+
+
+#weeks_days_container {
+	width: 450px;
+	overflow: hidden;
+	margin: auto;
+}
+
+
+.tablesmall {
+	width: 170px; 
+	margin-left: 20px;
+	padding-left: 0px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+					#tablesmall th {
+						font-size: 11px;
+      text-align: left;                                          
+						font-family: Century Gothic, Arial, sans-serif;
+					}
+				
+					#tablesmall td {
+						font-size: 14px;
+      text-align: left;                                           
+						font-family: Century Gothic, Arial, sans-serif;
+					}
+					
+.tablenorm {
+	width: 300px; 
+	padding-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+	text-align: left;
+}
+					.tablenorm th {
+						font-size: 10px;
+						font-family: Century Gothic, Arial, sans-serif;
+						text-align: left;
+					}
+				
+					.tablenorm td {
+						font-size: 10px;
+						font-family: Century Gothic, Arial, sans-serif;
+					}
+						
+table.gridtable {
+	font-family: 'Century Gothic',arial,sans-serif;
+	font-size:13px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+#content2 {
+	width: 100%;
+	background-color: #f5f5f5;
+	margin-bottom: 10px;
+	height: auto;
+	overflow: hidden;
+}
+
+.normdriver {
+	width: 355px;
+	height: 150px;
+	text-align: justify;
+	background-color: #E0E0E0;
+	float: right;
+	margin-left: 10px;
+}
+
+					.normdriver p {
+						padding-left: 10px;
+					}
+
+#pagetitle {
+	width: 930px;
+	height: auto;
+	margin-top: 80px;
+	margin-bottom: 10px;
+	background-color: #000000;
+	text-align: right;
+	opacity: 0.5;
+	filter: alpha(opacity=50); /* For IE8 and earlier */
+	padding-right: 50px;
+}
+
+.driverfoto {
+	float: right;
+	width: 80;
+	height: 150;
+	margin-top: 0;
+	margin-right: 0;
+	background-color: black;
+}
+
+.teamlogo {
+	width: 250px;
+	height: 150px;
+	float: left;
+	margin-top: 0px;
+}
+
+#gallery {
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: //#f5f5f5;
+}
+
+#gallery ul {
+	list-style: none;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+#gallery ul li {
+	display: inline;
+}
+
+#gallery img {
+	padding: 5px;
+	display: inline;
+	opacity: 1;
+	filter: alpha(opacity=100); /* For IE8 and earlier */
+	transition: opacity 0.4s linear 0s, filter 0.4s linear 0s;
+}
+
+#gallery img:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80); /* For IE8 and earlier */
+	cursor: pointer;
+}
+
+#ergebnisauswahl {
+	width: 760px;
+	height: 25px;
+	margin-bottom: 10px;
+	background-color: #E6E6E6;
+	text-align: center;
+}
+
+					#ergebnisauswahl h2, #ergebnisauswahl p {
+						margin-top: 0px;
+						padding-top: 0px;
+						height: 25px;
+					}
+
+					#ergebnisauswahl ul {
+						margin: 0;
+						padding: 0;
+						line-height: 30px;
+					}
+						
+					#ergebnisauswahl li {
+						margin: 0;
+						padding-left: 0px;
+						list-style: none;
+						float: left;
+						position: relative;
+					}
+						
+					#ergebnisauswahl li:hover {
+						background: #F8F8F8; 
+					}
+						
+					#ergebnisauswahl ul li a {
+						font-family: Century Gothic;
+						color: #000;
+						text-decoration: none;
+						text-align: left;
+						height: 25px;
+						width: 245px;
+						display: block;
+						padding-left: 0px;
+					}
+						
+					#ergebnisauswahl ul ul {
+						position: absolute;
+						top: 25px;
+						visibility: hidden;
+					}
+					
+					#ergebnisauswahl ul li:hover ul {
+						visibility: visible;
+					}
+					
+					#ergebnisauswahl ul ul li {
+						background: #E6E6E6;
+					}
+					
+					#ergebnisauswahl ul ul li:hover {
+						background: #C0FF3E;
+					}
+
+.normteam {
+	width: 100%;
+	height: auto;
+}
+
+.rennen{
+	width: auto;
+	height: 300px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#iframe_preview{
+	height: 1000px;
+	width: 200px;
+	border: 0px;
+	/*background-color: #f5f5f5;*/
+}
+
+#view_on_preview{
+ width: 100%
+	height: 200px;
+	margin-top: 0px;
+	
+}
+
+					#view_on_preview h6{
+						padding-left: 268px;
+						padding-right: 30px;
+						margin-bottom: -10px
+					}
+
+ul li{
+	font-family: bebas_neueregular;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+.site_control_navigator{
+	height:25px;
+	width:25px;
+	position: absolute;
+	color:white;
+	top:20%;
+}
+	.site_control_navigator img{
+		height:100%;
+		width:100%;
+	}
+
+	

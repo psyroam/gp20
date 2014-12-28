@@ -1,0 +1,90 @@
+<?php
+require_once './../../cLogin.php';
+	if(!logged()){
+		die("Fail");
+	}
+	
+	if(isset($_POST['txtFahrertag']) and isset($_POST['txtPassword'])){
+			$query = "SELECT `id` FROM `login` WHERE `fahrer-tag`='".mysql_escape_string(strtoupper($_POST['txtFahrertag']))."' and `password`='".mysql_escape_string(cryption($_POST['txtPassword']))."';";
+			$result = mysql_query($query);
+
+			if(mysql_num_rows($result) >0){
+				$query = "SELECT `team` FROM `fahrer` WHERE `fahrer-tag`='".$_POST['txtFahrertag']."';";
+				$result = mysql_query($query)or die(mysql_error());
+			
+				$team = mysql_result($result,0,'team');
+		
+				if(move_uploaded_file($_FILES['txtFile']['tmp_name'], "./../../../../images/team_logos/logo_".strtolower($team).".jpg")) {
+					header("Location: ./change_TeamLogo.php?status=successful");// 'Teamlogo erfolgreich hochgeladen!';
+				}
+				else
+					print($_FILES["file"]["error"]);
+			}
+			else{
+				header("Location: ./change_TeamLogo.php?status=failed");// 'Passwort ist falsch!';
+			}
+	}
+?>
+<style>
+		h1	{
+			color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 38px; padding-left: 35px; padding-right: 35px; font-weight: normal;margin-top:-10px;
+			} 
+		h2	{
+			color: black;  font-family: 'bebas_neueregular', sans-serif; font-size: 20px; padding-left: 15px; margin-top: 30px; padding-top: 2px; font-weight: normal;
+			} 
+		*	{
+			color: black; font-family: Century Gothic, sans-serif; font-size: 14px; 
+			}
+			
+			@font-face {
+						font-family: 'bebas_neueregular';
+						src: url('./../../../../BebasNeue-webfont.eot');
+						src: url('./../../../../BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+						url('./../../../../BebasNeue-webfont.woff') format('woff'),
+						url('./../../../../BebasNeue-webfont.ttf') format('truetype'),
+						url('./../../../../BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+						font-weight: normal;
+						font-style: normal;
+					}
+					
+					@font-face {
+						font-family: 'copystruct';
+						src: url('./../../../../COPYN___-webfont.eot');
+						src: url('./../../../../COPYN___-webfont.eot?#iefix') format('embedded-opentype'),
+						url('./../../../../COPYN___-webfont.woff') format('woff'),
+						url('./../../../../COPYN___-webfont.ttf') format('truetype'),
+						url('./../../../../COPYN___-webfont.svg#copystruct') format('svg');
+						font-weight: normal;
+						font-style: normal;
+					}
+	</style>
+<div id="content2">
+<h1>Teamlogo &auml;ndern</h1>
+	<Center>
+		<form method="post" action="change_TeamLogo.php" enctype="multipart/form-data">
+			<table>
+				<p id="status"><?php
+					if($_GET['status'] == "successful"){
+						echo "Teamlogo erfolgreich hochgeladen!";
+					}else if($_GET['status'] == "failed"){
+						echo "Passwort ist falsch!";
+					}
+				?></p>
+				<tr>
+					<td>Fahrerk&uuml;rzel:</td>
+					<td><input type="text" name="txtFahrertag" readonly value="<?php print(strtoupper($_SESSION['fahrer-tag'])); ?>"/></td>
+				</tr>
+				<tr>
+					<td>Passwort:</td>
+					<td><input type="password" name="txtPassword"/></td>
+				</tr>
+				<tr>
+					<td><input type="file" name="txtFile" id="file"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="&Auml;ndern"/></td>
+				</tr>
+			</table>
+		</form>
+	</Center>
+</div>
