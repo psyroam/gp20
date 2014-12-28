@@ -42,17 +42,14 @@
 					
 							</div>
 							<div id="navMenuRight">
-								<form><input class="suchleiste" name="Suche" placeholder="Suche" type="text" />
-								<input type="image" src="images/icons/icon_search.png" alt="Suche" class="submit" />
-						</form>
-      </div>
+								<form>
+									<input class="suchleiste" name="Suche" placeholder="Suche" type="text" />
+									<input type="image" src="images/icons/icon_search.png" alt="Suche" class="submit" />
+								</form>
+      						</div>
 						</div>
 						</div>
-			
 			</div>
-
-			
-			
 		<div id="wrapper">
 			<div id="foto">
    				<div class="fadein">                     
@@ -122,6 +119,8 @@
 		<div id="content">
 			<?=$URL?>
 			<?php
+
+				print_r($_SESSION);
 
 			include($URL);
 
