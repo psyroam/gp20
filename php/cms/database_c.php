@@ -58,6 +58,12 @@
 			}
 		}*/
 
+		///<summary>
+		/*
+			The function returns the URL which you want include
+		*/
+		///</summary>
+		///<param name="id">$_GET['site']</param>
 		public function getLinkById($id){
 			$query = "SELECT `url` FROM `".$this->creds['table']['sites']."` WHERE `id`='".mysql_escape_string($id)."';";
 			$result =  mysql_query($query)or die(mysql_error());
@@ -71,6 +77,14 @@
 			return $link;
 		}
 
+		///<summary>
+		/*
+			Check if row returns where `username` = :username AND `password` = :password
+		*/
+		///</summary>
+		///<param name="username">username</param>
+		///<param name="password">hashed password</param>
+		///<returns>TRUE or FALSE ($found)</returns>
 		public function try_login($username,$password){
 			$query = "SELECT * FROM `".$this->creds['table']['credentials']."` WHERE `username`='".mysql_escape_string($username)."' AND `password`='".mysql_escape_string($password)."';";
 			$res = mysql_query($query)or die(mysql_error());
@@ -112,10 +126,20 @@
 			
 		}
 
+		///<summary>
+		/*
+			Close the connection
+		*/
+		///</summary>
 		public function close(){
 			mysql_close($this->connection);
 		}
 
+		///<summary>
+		/*
+			
+		*/
+		///</summary>
 		//not up to date
 		public function update_values($id,$text,$url)
 		{
@@ -130,7 +154,13 @@
 
 			Report::publish(new Report("Erfolgreich geändert!","",Error_LVL::Positive));
 		}
-	
+		
+		///<summary>
+		/*
+			
+		*/
+		///</summary>
+		///TO-DO: delete or edit params because they are not needed 
 		public function delete_values($id,$text,$url)
 		{
 			$table = $this->creds['table']['sites'];
@@ -140,6 +170,13 @@
 			Report::publish(new Report("Erfolgreich gelöscht!","",Error_LVL::Positve));
 		}
 
+		///<summary>
+		/*
+			The function returns an array with the userdata
+		*/
+		///</summary>
+		///<param name="username">Username</param>
+		///<returns>array</returns>
 		public function ini($username)
 		{
 			$query = "SELECT * FROM `".$this->creds['table']['credentials']."` WHERE `username` = '".mysql_escape_string($username)."';";
@@ -162,6 +199,15 @@
 			return $data;
 		}
 
+		///<summary>
+		/*
+			This function adds a new site to the database
+		*/
+		///</summary>
+		///<param name="text"></param>
+		///<param name="url"></param>
+		///<param name="hidden">If($hidden === true) 
+		///not up to date
 		public function new_link($text,$url,$hidden)
 		{
 			if(empty($hidden))
@@ -177,6 +223,12 @@
 			Report::publish(new Report("Erfolgreich hinzufügt","Die Seite \"$text\" wurde erfolgreich hinzufügt!", Error_LVL::Positive));
 		}
 
+		///<summary>
+		/*
+			This function creates an new user
+		*/
+		///</summary>
+		///<param name="text"></param>
 		public function register($username,$password,$salt,$enabling_token)
 		{
 			$query = "INSERT INTO `".$this->creds['table']['credentials']."` (`username`,`password`,`salt`,`enabling_token`) VALUES('".mysql_escape_string($username)."','".mysql_escape_string($password)."','".mysql_escape_string($salt)."','".mysql_escape_string($enabling_token)."');";
@@ -186,6 +238,12 @@
 			return true;
 		}
 
+		///<summary>
+		/*
+			This function returns the salt to hash later a by user typed password
+		*/
+		///</summary>
+		///<param name="username"></param>
 		public function get_salt($username)
 		{
 			$query ="SELECT `salt` FROM `".$this->creds['table']['credentials']."` WHERE `username`='".mysql_escape_string($username)."';";
@@ -198,6 +256,12 @@
 			}
 		}
 
+		///<summary>
+		/*
+			This function gets all user information
+		*/
+		///</summary>
+		///<returns>Array</returns>
 		public function su_getUsers()
 		{
 			if($_SESSION['user']->isAdmin)
@@ -221,6 +285,15 @@
 			}
 		}
 
+		///<summary>
+		/*
+			Update user permissions
+		*/
+		///</summary>
+		///<param name="username">username:string</param>
+		///<param name="isAdmin">isAdmin:boolean</param>
+		///<param name="isLocked">isLocked:boolean</param>
+		///<param name="isEnabled">isEnabled:boolean</param>
 		public function su_CTRL_Panel_Update($username,$isAdmin,$isLocked,$isEnabled)
 		{
 			if($_SESSION['user']->isAdmin)
@@ -230,6 +303,11 @@
 			}
 		}
 
+		///<summary>
+		/*
+			Check and enable account if the token is right
+		*/
+		///</summary>
 		public function enable_account($token)
 		{
 			$query = "SELECT `enabling_token` FROM `".$this->creds['table']['credentials']."` WHERE `username`='".mysql_escape_string($_SESSION['user']->username)."' AND `enabling_token`='".mysql_escape_string($token)."';";
@@ -248,21 +326,6 @@
 			else
 			{
 				Report::publish(new Report("Token ist falsch!","Das angegebene Token ist ungültig",Error_LVL::Negative));
-			}
-		}
-
-		public function isURL_ID_valid($id)
-		{
-			$query = "SELECT `id` FROM `".$this->creds['table']['sites']."` WHERE `id`='".mysql_escape_string($id)."';";
-			$result = mysql_query($query) or die(mysql_error());
-
-			if(mysql_num_rows($result)>0)
-			{
-				return true;
-			}
-			else 
-			{
-				return false;
 			}
 		}
 
@@ -301,6 +364,12 @@
 			}
 		}
 
+		///<summary>
+		/*
+			Search after the highest year(by value) and return the season
+		*/
+		///</summary>
+		///<returns></returns>
 		public function get_latest_saison()
 		{
 			$query = "SELECT MAX(`saison`) FROM `".$this->creds['table']['race']."`;";
@@ -309,6 +378,13 @@
 			return mysql_result($result, 0);
 		}
 
+		///<summary>
+		/*
+			Return sum of scores of all races in the season(=$saison)
+		*/
+		///</summary>	
+		///<param name="tag">driver tag</param>
+		///<param name="saison">season</param>
 		public function get_score($tag,$saison)
 		{
 			//SELECT `tag`, SUM(`score`) AS 'Punkte' FROM `results` JOIN `race` ON results.race = race.id WHERE `saison` = '2013' GROUP BY `tag` 
@@ -317,6 +393,12 @@
 			return mysql_result($result, 0);
 		}
 
+		///<summary>
+		/*
+			Return an array of all drivers ordered by score
+		*/
+		///</summary>
+		///<returns>an array of drivers</returns>
 		public function get_score_rank()
 		{
 			$fahrer = $this->get_fahrer();
