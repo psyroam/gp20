@@ -170,6 +170,8 @@
 			Report::publish(new Report("Erfolgreich gelöscht!","",Error_LVL::Positve));
 		}
 
+
+		//not up to date
 		///<summary>
 		/*
 			The function returns an array with the userdata
@@ -177,8 +179,10 @@
 		///</summary>
 		///<param name="username">Username</param>
 		///<returns>array</returns>
+
 		public function ini($username)
 		{
+			print("not up to date");
 			$query = "SELECT * FROM `".$this->creds['table']['credentials']."` WHERE `username` = '".mysql_escape_string($username)."';";
 			$result = mysql_query($query)or die(mysql_error());
 
@@ -223,6 +227,9 @@
 			Report::publish(new Report("Erfolgreich hinzufügt","Die Seite \"$text\" wurde erfolgreich hinzufügt!", Error_LVL::Positive));
 		}
 
+
+		public function register($username,$password,$salt,$first_name,$last_name,$tag)
+
 		///<summary>
 		/*
 			This function creates an new user
@@ -230,11 +237,22 @@
 		///</summary>
 		///<param name="text"></param>
 		public function register($username,$password,$salt,$enabling_token)
+>>>>>>> master
 		{
-			$query = "INSERT INTO `".$this->creds['table']['credentials']."` (`username`,`password`,`salt`,`enabling_token`) VALUES('".mysql_escape_string($username)."','".mysql_escape_string($password)."','".mysql_escape_string($salt)."','".mysql_escape_string($enabling_token)."');";
-			
-			
+			$query = "INSERT INTO `".$this->creds['table']['credentials']."` (`username`,`password`,`salt`) VALUES('".mysql_escape_string($username)."','".mysql_escape_string($password)."','".mysql_escape_string($salt)."');";
+
 			mysql_query($query)or die(mysql_error());
+
+			$query_2 = "SELECT `id` FROM `".$this->creds['table']['credentials']."` WHERE `username`='".$username."';";
+
+			$result = mysql_query($query_2)or die(mysql_error());
+
+
+			$query_3 = "INSERT INTO `".$this->creds['table']['data']."` (`id`,`first_name`,`last_name`,`tag`) VALUES('".mysql_escape_string(mysql_result($result, 0))."','".mysql_escape_string($first_name)."','".mysql_escape_string($last_name)."','".mysql_escape_string($tag)."')";
+
+			mysql_query($query_3)or die(mysql_error());
+			
+			
 			return true;
 		}
 
@@ -255,6 +273,7 @@
 				return $row->salt;
 			}
 		}
+		//not up to date
 
 		///<summary>
 		/*
@@ -262,8 +281,10 @@
 		*/
 		///</summary>
 		///<returns>Array</returns>
+
 		public function su_getUsers()
 		{
+			print("not up to date");
 			if($_SESSION['user']->isAdmin)
 			{
 				$query = "SELECT `username`,`update`,`register_date` FROM `".$this->creds['table']['credentials']."` WHERE `username`!='".mysql_escape_string($_SESSION['user']->username)."';";
@@ -273,7 +294,8 @@
 				$i = 0;
 				while($row = mysql_fetch_object($result))
 				{
-					$data[$i] = new USER($row->username);
+					//$data[$i] = new USER($row->username);
+				//	$data[$i] = new User();
 					$i++;
 				}
 
@@ -364,6 +386,15 @@
 			}
 		}
 
+		public function get_tag_by_username($username)
+		{
+			//SELECT `tag` FROM `credentials` JOIN `data` ON credentials.id = data.id WHERE `username`= 'PER';
+			$query = "SELECT `tag` FROM `".$this->creds['table']['credentials']."` JOIN `".$this->creds['table']['data']."` ON credentials.id = data.id WHERE `username`='".mysql_escape_string($username)."';";
+			$result = mysql_query($query)or die(mysql_error());
+
+			return mysql_result($result, 0);
+		}
+		
 		///<summary>
 		/*
 			Search after the highest year(by value) and return the season
